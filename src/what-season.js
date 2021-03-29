@@ -4,6 +4,9 @@ module.exports = function getSeason(date) {
   if (!date) {
     return "Unable to determine the time of year!";
   }
+  if (!date.getTime()) {
+    throw "Error";
+  }
   const month = date.getMonth() + 1;
   switch (month) {
     case 1:
